@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="description" content="Francis Wu (Montreal, QC) is 5 parts designer, 2 parts programmer, and some parts private." />
+  <meta name="keywords" content="montreal, cluetrain, web20, web2.0, design, webdesign, programming, ria, ria design, web applications, web applications design, ui, ui design, user interface, user interface design, user experience, user experience design, usability, usability design, accessibility, accessible design, design integration, blogging, business blogging, web analytics, seo, search engine optimization, sem, search engine marketing, market analysis, web analytics, systems analysis, systems design, wireframing, mockups prototyping, semantic markup, css, html, xhtml, javascript, scripting, front-end, front-end scripting, php, asp, ror, ruby on rails, wordpress" /> 
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <title>This Is Francis Wu</title>
+  <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+  <script>
+    $(function(){
+      // Style Twitter Feed: Remove default inline style for timestamp link.
+      $("#twitter ul li>a").attr("style", "");
+      // Style Twitter Feed: Replace <span> with <blockquote>
+      $("#twitter ul li span").each(function() {
+        $(this).replaceWith("<blockquote>" + $(this).html() + "</blockquote>");
+      });
+      // Style Twitter Feed: Add tail to <blockquote>
+      $("#twitter ul li blockquote").before("<b class='tail'><!----></b>");
+      // Style Twitter Feed: Remove first colon in Twitter message
+      $("#twitter ul li blockquote").each(function() {
+        if ($(this).html().charAt(0) == ":") {
+          $(this).html($(this).html().substring(1));
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+<div id="header">
+  <div class="container clearfix">
+    <div id="intro">
+      <h1>This Is Francis Wu</h1>
+      <div class="description">
+        <span class="designer">5 parts designer</span>
+        <span class="programmer">2 parts programmer</span>
+        <span class="private">some parts private</span>
+      </div>
+    </div>
+    <div id="photo">
+      <img src="images/portrait.png" alt="Francis Wu">
+    </div>
+    <div id="whatido">
+      <b class="tail"><!----></b>
+      <blockquote>
+        <span>What do I do? <a href="javascript:;" onclick="$(this).parent().hide();$(this).parent().next().show();">Let me tell you</a>.</span>
+        <span style="display:none;">I design web applications using <strong>paper and pencils</strong>, <strong>semantic HTML and CSS</strong>, <strong>a bit of jQuery</strong>, <strong>a bit of Photoshop</strong> and <strong>some magic</strong>. <em>Usually in that order</em>.</span>
+      </blockquote>
+    </div>
+  </div>
+</div>
+
+<div id="follow">
+  <div class="container clearfix">
+    <div id="work">
+      <h2>Recent Work</h2>
+      <div id="flickr_badge_wrapper">
+        <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=5&display=latest&size=s&layout=x&source=user_set&user=27017618%40N00&set=72157622323272315&context=in%2Fset-72157622323272315%2F"></script>
+        <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=5&display=latest&size=s&layout=x&source=user_set&user=27017618%40N00&set=72157622443051834&context=in%2Fset-72157622443051834%2F"></script>
+      </div>
+      <p>
+        Here are
+        <a href="http://www.flickr.com/photos/freakystyley/sets/72157622323272315/" title="My Screenshots on Flickr">some more screenshots</a>,
+        <a href="http://www.flickr.com/photos/freakystyley/sets/72157622443051834/" title="My Wireframes on Flickr">some more wireframes</a>, and even
+        <a href="http://github.com/thisisfranciswu/" title="My GitHub Repository">some code</a>.
+      </p>
+    </div>
+    <div class="column left">
+      <div id="twitter">
+        <h2>Recent Tweets</h2>
+        <ul id="twitter_update_list"></ul>
+        <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+        <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/thisisfranciswu.json?callback=twitterCallback2&amp;count=3"></script>
+        <a href="http://twitter.com/thisisfranciswu" class="twitter_link" title="Find me on Twitter"><img src="images/twitter_icon.png" alt="Twitter icon"><span>Follow me on Twitter</span></a>
+      </div>
+      <div id="contact">
+        <h2>Contact</h2>
+        <p>thisisfranciswu[at]gmail.com</p>
+      </div>
+    </div>
+    <div class="column right">
+      <div id="also">
+        <h2>I can also be found here</h2>
+        <ul>
+          <li class="linkedin">
+            <a href="http://www.linkedin.com/in/thisisfranciswu" title="My Professional Summary on LinkedIn">LinkedIn</a>
+            <small>My Professional History on LinkedIn</small>
+          </li>
+          <li class="delicious">
+            <a href="http://delicious.com/thisisfranciswu" title="My Bookmarks on Delicious">Delicious</a>
+            <small>My Bookmarks on Delicious</small>
+          </li>
+          <li class="digg">
+            <a href="http://digg.com/users/freakystyley" title="My Social News on Digg">Digg</a>
+            <small>My Social News on Digg</small>
+          </li>
+          <li class="goodreads">
+            <a href="http://www.goodreads.com/review/list/1983772" title="My Bookshelf on Goodreads">Goodreads</a>
+            <small>My Bookshelf on Goodreads</small>
+          </li>
+          <li class="flickr">
+            <a href="http://flickr.com/photos/thisisfranciswu" title="My Photos on Flickr">Flickr</a>
+            <small>My Photos on Flickr</small>
+          </li>
+          <li class="lastfm">
+            <a href="http://www.last.fm/user/fsbrainstorm" title="What I'm Listening to on Last.fm">Last.fm</a>
+            <small>What I'm Listening to on Last.fm</small>
+          </li>
+          <li class="snooth">
+            <a href="http://www.snooth.com/my-wines/thisisfranciswu" title="My Wine Journal on Snooth">Snooth</a>
+            <small>My Wine Journal on Snooth</small>
+          </li>
+          <li class="facebook">
+            <a href="http://www.facebook.com/people/Francis_Wu/758140034" title="Find me on Facebook">Facebook</a>
+            <small>Find me on Facebook</small>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+    var pageTracker = _gat._getTracker("UA-10826407-1");
+    pageTracker._trackPageview();
+  } catch(err) {}
+</script>
+
+</body>
+
+</html>

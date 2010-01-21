@@ -1,0 +1,26 @@
+/* Header */
+body#image-area-matcher #header { height: auto; }
+body#image-area-matcher #header .container { padding: 50px; height: auto; }
+body#image-area-matcher #header #intro { width: auto; }
+body#image-area-matcher #header #intro p { color: #C1C3C4; }
+
+/* Calculator */
+body#image-area-matcher #calculator { background: url('../images/follow_bg.png') repeat-x center top; }
+body#image-area-matcher #calculator form { float: left; width: auto; }
+body#image-area-matcher #calculator .container { background: url('../images/follow_container_bg.png') no-repeat center top; padding: 50px 0; }
+body#image-area-matcher #calculator label { color: #C1C3C4; }
+body#image-area-matcher #calculator span.disabled { -moz-opacity: 0.25; opacity: 0.25; filter: alpha(opacity=25); }
+body#image-area-matcher #calculator span label { color: #848789; }
+body#image-area-matcher #calculator input { border-color: #2b4d64; color: #FFFFFF; background: #000000; padding-left: 5px; width: 120px; }
+body#image-area-matcher #calculator ul li.last { padding: 0; }
+
+/* Why */
+body#image-area-matcher #why { float: right; width: 380px; }
+body#image-area-matcher #why p { font-size: 18px; margin: 0 0 0.8em; color: #848789; line-height: 1.6; }
+body#image-area-matcher #why strong { font-weight: normal; background: #1B2023; color: #C1C3C4; padding: 3px 5px; }
+
+/* License */
+body#image-area-matcher #license { text-align: right; }
+body#image-area-matcher #license .container { padding: 0 0 50px; }
+body#image-area-matcher #license p { font-size: 11px; margin: 5px 0 0; color: #464A4E; }
+body#image-area-matcher #license a { color: #848789; }
