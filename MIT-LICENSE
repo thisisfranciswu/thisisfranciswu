@@ -17,4 +17,151 @@ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
 NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTW<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Image Area Matcher</title>
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="../css/image-area-matcher.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="../css/these_are_forms.css" type="text/css" media="screen" charset="utf-8">
+  <!--[if IE6]>
+    <link rel="stylesheet" href="../css/these_are_forms_ie.css" type="text/css" media="screen" charset="utf-8">
+  <![endif]-->
+  <script type="text/javascript" charset="utf-8" src="../js/prototype.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    function calculate_all() {
+      calculate_source_info();
+      calculate_target_info();
+      calculate_target_image_new_dimensions();
+    }
+    function calculate_source_info() {
+      $("source_image_area").value = $("source_image_width").value * $("source_image_height").value;
+      $("source_image_wh_ratio").value = $("source_image_width").value / $("source_image_height").value;
+    }
+    function calculate_target_info() {
+      $("target_image_area").value = $("target_image_original_width").value * $("target_image_original_height").value;
+      $("target_image_wh_ratio").value = $("target_image_original_width").value / $("target_image_original_height").value;
+    }
+    function calculate_target_image_new_dimensions() {
+      $("target_image_new_height").value = Math.sqrt($("source_image_area").value / $("target_image_wh_ratio").value);
+      $("target_image_new_width").value = Math.round($("source_image_area").value / $("target_image_new_height").value);
+      $("target_image_new_height").value = Math.round($("target_image_new_height").value);
+      $("target_image_new_area").value = $("target_image_new_width").value * $("target_image_new_height").value;
+      $("target_image_new_wh_ratio").value = $("target_image_new_width").value / $("target_image_new_height").value;
+    }
+    $(document).observe('dom:loaded', function () {
+      $("source_image_width").observe("change", calculate_all);
+      $("source_image_height").observe("change", calculate_all);
+      $("target_image_original_width").observe("change", calculate_all);
+      $("target_image_original_height").observe("change", calculate_all);
+    })
+  </script>
+</head>
+
+<body id="image-area-matcher">
+
+<div id="header">
+  <div class="container clearfix">
+    <div id="intro">
+      <h1>Image Area Matcher</h1>
+      <div class="description">
+        <p>
+          This calculator makes sure two images have the same area sizes while maintaining their respective aspect ratios.
+          It's perfect for logos!
+          <a href="javascript:;" onclick="$('why').toggle();('why_link').toggle();" title="Why?" id="why_link">Why?</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="calculator">
+  <div class="container clearfix">
+
+    <form class="xlarge no_hover no_padding">
+      <ul>
+        <li>
+          <label>Source Image</label>
+          <span>
+            <input type="text" id="source_image_width" class="text"/>
+            <label for="source_image_width">Width</label>
+          </span>
+          <span>
+            <input type="text" id="source_image_height" class="text"/>
+            <label for="source_image_height">Height</label>
+          </span>
+          <span class="disabled">
+            <input type="text" id="source_image_area" disabled="disabled" class="text"/>
+            <label for="source_image_area">Area</label>
+          </span>
+          <span class="disabled">
+            <input type="text" id="source_image_wh_ratio" disabled="disabled" class="text"/>
+            <label for="source_image_wh_ratio">W/H Ratio</label>
+          </span>
+        </li>
+        <li>
+          <label>Target Image</label>
+          <span>
+            <input type="text" id="target_image_original_width" class="text"/>
+            <label for="target_image_original_width">Width</label>
+          </span>
+          <span>
+            <input type="text" id="target_image_original_height" class="text"/>
+            <label for="target_image_original_height">Height</label>
+          </span>
+          <span class="disabled">
+            <input type="text" id="target_image_area" disabled="disabled" class="text"/>
+            <label for="target_image_area">Area</label>
+          </span>
+          <span class="disabled">
+            <input type="text" id="target_image_wh_ratio" disabled="disabled" class="text"/>
+            <label for="target_image_wh_ratio">W/H Ratio</label>
+          </span>
+        </li>
+        <li class="last">
+          <label>New Target Image Dimensions</label>
+          <span>
+            <input type="text" id="target_image_new_width" class="text"/>
+            <label for="target_image_new_width">Width</label>
+          </span>
+          <span>
+            <input type="text" id="target_image_new_height" class="text"/>
+            <label for="target_image_new_height">Height</label>
+          </span>
+          <span class="disabled">
+            <input type="text" id="target_image_new_area" disabled="disabled" class="text"/>
+            <label for="target_image_new_area">Area</label>
+          </span>
+          <span class="disabled">
+            <input type="text" id="target_image_new_wh_ratio" disabled="disabled" class="text"/>
+            <label for="target_image_new_wh_ratio">W/H Ratio</label>
+          </span>
+        </li>
+      </ul>
+    </form>
+
+    <div id="why" style="display:none;">
+      <p><strong>Logos come in all dimensions.</strong> Some are wide, some are tall. Some are as wide as they are tall (or square).</p>
+      <p>
+        But if you've ever attempted to uniformly resize a collection of logos, you eventually realize that <strong>you can't resize them by relying on a maximum width or height</strong> &#8212;
+        <strong>square logos will always look bigger</strong> compared to the wider or taller ones.
+      </p>
+      <p>This calculator will help you resize logos so that <strong>they take up the same amount of visual space while maintaining their respective aspect ratios</strong>.</p>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1262268-4");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>ARE.
